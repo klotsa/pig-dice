@@ -6,9 +6,21 @@ var randomNumber = function(){
 }
 
 $(document).ready(function(){
+  var userTotal = 0;
   $("#form-one").submit(function(event){
     event.preventDefault();
-    var result = randomNumber();
-    $("#result").text(result);
+
+    var userResult =0;
+    var userResult = randomNumber();
+
+    userTotal += userResult;
+    if(userResult === 1)
+    {
+        userTotal = 0;
+    }
+    $("#user-result").text(userResult);
+    $("#user-total").text(userTotal);
+    // var computerResult = randomNumber();
+    // $("#computer-result").text(computerResult);
   });
 });
